@@ -6,7 +6,7 @@ const App = () => {
   return (
     <>
       <Header/>
-      <ItemListContainer/>
+      <ItemListContainer greeting="Lista de los Items"/>
     </>
   );
 };
