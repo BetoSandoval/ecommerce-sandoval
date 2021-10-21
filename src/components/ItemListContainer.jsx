@@ -4,12 +4,13 @@ import styled from "styled-components";
 
 
 const ItemListContainer = (props) => {
+
   return (
     <Main>
       <div className="main-container">
         <h1 className="main-title">{props.greeting}</h1>
 
-        <ItemCount stock={5 } initial={0}/>
+        <ItemCount stock={5} initial={0}/>
       </div>
     </Main>
   );

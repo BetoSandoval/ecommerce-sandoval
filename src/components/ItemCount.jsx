@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import ItemCard from "../assets/styles/elements/ItemCard";
 
-export const ItemCount = ({ stock, initial, onAdd }) => {
+export const ItemCount = ({ stock, initial }) => {
 
   const [counter, setCounter] = useState( initial );
 
-  const [stockRest, setStokRest] = useState( stock );
+  const [stockCount, setStokCount] = useState( stock );
   
   const handleAdd = () => {
     if( counter < stock ){
       setCounter( counter + 1 );
-      setStokRest( stockRest - 1 );
+      setStokCount( stockCount - 1 );
 
     }
   }
@@ -18,14 +18,19 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   const handleRest = () => {
     if( counter >= 1){
       setCounter( counter - 1 );
-      setStokRest( stockRest + 1 );
+      setStokCount( stockCount + 1 );
     }
   }
 
+  const onAdd = () => {
+    if(counter > 0){
+      console.log(`Se agragaron ${counter} los producots al carrito`);
+    }
+  }
 
   return (
     <ItemCard>
-      <h3 className="title-item">Camisa tiger: {stockRest} en stock</h3>
+      <h3 className="title-item">Camisa tiger: {stockCount} en stock</h3>
 
       <div className="content-item">
         <div className="counter">
