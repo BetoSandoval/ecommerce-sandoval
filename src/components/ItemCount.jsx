@@ -3,24 +3,29 @@ import ItemCard from "../assets/styles/elements/ItemCard";
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
 
-  const [counter, setCounter] = useState(initial);
+  const [counter, setCounter] = useState( initial );
+
+  const [stockRest, setStokRest] = useState( stock );
   
   const handleAdd = () => {
     if( counter < stock ){
       setCounter( counter + 1 );
+      setStokRest( stockRest - 1 );
+
     }
   }
 
   const handleRest = () => {
     if( counter >= 1){
       setCounter( counter - 1 );
+      setStokRest( stockRest + 1 );
     }
   }
 
 
   return (
     <ItemCard>
-      <h3 className="title-item">Camisa tiger: {stock} en stock</h3>
+      <h3 className="title-item">Camisa tiger: {stockRest} en stock</h3>
 
       <div className="content-item">
         <div className="counter">
