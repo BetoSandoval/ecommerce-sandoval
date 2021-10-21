@@ -1,5 +1,5 @@
 import React from "react";
-import Headder from "../assets/styles/elements/Header";
+import Headder from "../assets/styles/elements/Headder";
 import CarWidget from "./CarWidget";
 import { NavBar } from "./NavBar";
 

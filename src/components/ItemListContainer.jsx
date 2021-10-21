@@ -9,7 +9,7 @@ const ItemListContainer = (props) => {
       <div className="main-container">
         <h1 className="main-title">{props.greeting}</h1>
 
-        <ItemCount />
+        <ItemCount stock={5 } initial={0}/>
       </div>
     </Main>
   );
