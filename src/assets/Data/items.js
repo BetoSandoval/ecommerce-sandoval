@@ -1,4 +1,4 @@
-const projects = [
+const itemData = [
     {
         id: 1,
         name: 'planta suave',
@@ -18,3 +18,5 @@ const projects = [
         stock: 2
     }
 ];
+
+export default itemData;
