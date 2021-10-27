@@ -29,14 +29,12 @@ const ItemListContainer = (props) => {
     .catch( err => console.error(err));
   }, [fakeApi])
 
-  console.log(items);
-
   return (
     <Main>
       <div className="main-container">
         <h1 className="main-title">{props.greeting}</h1>
         {/* Crear dos componentes más itemList e item, Item list itera a item el numero de veces */}
-        <ItemList />
+        <ItemList dataItems={items}/>
 
         <ItemCount stock={5} initial={0} />
       </div>
