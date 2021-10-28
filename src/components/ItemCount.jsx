@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ItemCard from "../assets/styles/elements/ItemCard";
 
-export const ItemCount = ({ stock, initial }) => {
+export const ItemCount = ({ name, stock, initial, description}) => {
 
   const [counter, setCounter] = useState( initial );
 
@@ -30,7 +30,9 @@ export const ItemCount = ({ stock, initial }) => {
 
   return (
     <ItemCard>
-      <h3 className="title-item">Camisa tiger: {stockCount} en stock</h3>
+      <h3 className="title-item">{name}: {stockCount} en stock</h3>
+
+      <p>{description}</p>
 
       <div className="content-item">
         <div className="counter">

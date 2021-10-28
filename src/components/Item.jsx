@@ -1,9 +1,15 @@
 import React from 'react'
+import { ItemCount } from "./ItemCount";
 
-const Item = () => {
+const Item = ({name, description, stock}) => {
     return (
         <div>
-            <h1>Hola mundo!</h1>
+            <ItemCount 
+            name={name} 
+            stock={stock} 
+            initial={0}
+            description={description}
+            />
         </div>
     )
 }
