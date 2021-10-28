@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { ItemCount } from "./ItemCount";
 import styled from "styled-components";
 import ItemList from "./ItemList";
 import itemData from '../assets/Data/items';
@@ -35,8 +34,6 @@ const ItemListContainer = (props) => {
         <h1 className="main-title">{props.greeting}</h1>
         {/* Crear dos componentes más itemList e item, Item list itera a item el numero de veces */}
         <ItemList dataItems={items}/>
-
-        <ItemCount stock={5} initial={0} />
       </div>
     </Main>
   );
