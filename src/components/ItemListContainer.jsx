@@ -1,30 +1,16 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import itemData from '../assets/Data/items';
 import Main from '../assets/styles/elements/Main';
 // itemListContainer es un Componente destinado a conseguir la logica del catalogo (una array de productos actualiza el estado y pasa los datos a itemList)
 const ItemListContainer = (props) => {
-  const fakeApi = itemData;
+  const fakeApi = 'https://fakestoreapi.com/products';
   const [items, setItems] = useState([]);
-
-  const peticion = ( fakeApi ) => {
-    return new Promise((resolve, reject) => {
-      if (fakeApi.length !== 0) {
-        setTimeout(() => {
-          resolve(fakeApi);
-        }, 2000);
-      } else {
-        const error = new Error("No se pudo conectar con los datos");
-        reject(error)
-      }
-    });
-  };
 
 
   useEffect(() => {
-    peticion( fakeApi )
-    .then(data => setItems(data))
-    .catch( err => console.error(err));
+    fetch(fakeApi)
+      .then( resp => resp.json() )
+      .then( json => setItems(json) )
   }, [fakeApi])
 
   if( items.length === 0 ){

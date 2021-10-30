@@ -12,6 +12,7 @@ const Headder = styled.header`
     .inner {
       margin: 0 2.0rem;
       height: 100%;
+      border-bottom: 2px solid;
       .logo {
         position: relative;
         padding: 0.4rem 1.5rem;

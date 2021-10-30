@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ItemCard from "../assets/styles/elements/ItemCard";
+import CounterItemCard from "../assets/styles/elements/CounterItemCard";
 
 export const ItemCount = ({ name, stock, initial, description}) => {
 
@@ -29,11 +29,8 @@ export const ItemCount = ({ name, stock, initial, description}) => {
   }
 
   return (
-    <ItemCard>
+    <CounterItemCard>
       <h3 className="title-item">{name}: {stockCount} en stock</h3>
-
-      <p>{description}</p>
-
       <div className="content-item">
         <div className="counter">
           <button className="minus" onClick={ handleRest }>-</button>
@@ -43,7 +40,7 @@ export const ItemCount = ({ name, stock, initial, description}) => {
 
         <p className="add-shopping-car"><button onClick={onAdd}>Agregar al carrito</button></p>
       </div>
-    </ItemCard>
+    </CounterItemCard>
   );
 };
 

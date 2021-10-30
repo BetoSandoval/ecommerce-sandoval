@@ -8,6 +8,7 @@ const Main = styled.main`
     padding: 0 1.5rem;
     .main-title {
       text-align: center;
+      margin-bottom: 5rem;
     }
   }
 `;
