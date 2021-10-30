@@ -8,7 +8,7 @@ const Header = () => {
     <Headder id="main-header" className="header-v5 hidden-sm hidden-xs">
       <div className="container">
         <div className="inner">
-          <div className="logo">Mookrama</div>
+          <div className="logo">E-comerce</div>
 
           <div className="menu">
             <NavBar/>

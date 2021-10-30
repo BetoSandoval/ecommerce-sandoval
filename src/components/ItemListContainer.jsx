@@ -17,7 +17,7 @@ const ItemListContainer = (props) => {
     return(
       <Main>
         <div className="main-container">
-          <h1 className="main-title">Cargando productos...</h1>
+          <h1 className="main-title">Loading...</h1>
           </div>
       </Main>
     )

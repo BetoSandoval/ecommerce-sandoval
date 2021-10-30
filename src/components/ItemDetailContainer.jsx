@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
   }, [fakeApi]);
 
   if (item.length === 0) {
-    return <h1>Cargando información del producto....</h1>;
+    return <h1>Loading....</h1>;
   } else {
     return (
       <Main>
