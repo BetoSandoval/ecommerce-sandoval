@@ -15,6 +15,7 @@ const ItemList = (props) => {
           stock={item.rating.count}
           image={item.image}
           rating={item.rating}
+          category={item.category}
         />
       ))}
     </ItemsListContainer>

@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
@@ -6,9 +7,11 @@ import ItemListContainer from "./components/ItemListContainer";
 const App = () => {
   return (
     <>
-      <Header/>
-      <ItemListContainer greeting="Our products"/>
-      <ItemDetailContainer/>
+      <BrowserRouter>
+        <Header />
+        <ItemListContainer greeting="Our products" />
+        <ItemDetailContainer />
+      </BrowserRouter>
     </>
   );
 };
