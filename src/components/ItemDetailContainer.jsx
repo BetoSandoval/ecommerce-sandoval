@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
-  console.log(id);
   const fakeApi = `https://fakestoreapi.com/products/${id}`;
   const [item, setItem] = useState([]);
 
