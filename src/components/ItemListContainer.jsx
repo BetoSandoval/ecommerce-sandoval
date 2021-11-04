@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import Main from '../assets/styles/elements/Main';
-// itemListContainer es un Componente destinado a conseguir la logica del catalogo (una array de productos actualiza el estado y pasa los datos a itemList)
+import { useParams } from 'react-router-dom';
+
+
 const ItemListContainer = (props) => {
-  const fakeApi = 'https://fakestoreapi.com/products';
+  const {category} = useParams();
+  
   const [items, setItems] = useState([]);
 
 
   useEffect(() => {
-    fetch(fakeApi)
-      .then( resp => resp.json() )
-      .then( json => setItems(json) )
-  }, [fakeApi])
+      if(category){
+          console.log(category)
+          fetch(`https://fakestoreapi.com/products/category/${category}`)
+            .then(res=>res.json())
+            .then(json=>setItems(json))
+      }else{
+        fetch('https://fakestoreapi.com/products')
+        .then( resp => resp.json() )
+        .then( json => setItems(json) )
+      }
+  }, [category])
 
   if( items.length === 0 ){
     return(

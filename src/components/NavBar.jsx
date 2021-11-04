@@ -31,7 +31,7 @@ export const NavBar = () => {
       <Nav>
         <ul>
           <li>
-            <Link to="/" exact>Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/category/men's clothing">Men's</Link>
@@ -40,7 +40,7 @@ export const NavBar = () => {
             <Link to="/category/women's clothing">Women's</Link>
           </li>
           <li>
-            <Link to="/category/jewlery">Jewelery</Link>
+            <Link to="/category/jewelery">Jewelery</Link>
           </li>
           <li>
             <Link to="/category/electronics">Electronics</Link>
