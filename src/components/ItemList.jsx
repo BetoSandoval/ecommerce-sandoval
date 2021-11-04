@@ -1,22 +1,25 @@
 import React from "react";
 import Item from "./Item";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 // Agrupa y mapea items
 const ItemList = (props) => {
   return (
     <ItemsListContainer>
       {props.dataItems.map((item) => (
-        <Item
-          key={item.id}
-          name={item.title}
-          price={item.price}
-          description={item.description}
-          stock={item.rating.count}
-          image={item.image}
-          rating={item.rating}
-          category={item.category}
-        />
+        <Link to={`/item/${item.id}`} key={item.id}>
+          <Item
+            name={item.title}
+            price={item.price}
+            description={item.description}
+            stock={item.rating.count}
+            image={item.image}
+            rating={item.rating}
+            category={item.category}
+          />
+        </Link>
       ))}
     </ItemsListContainer>
   );

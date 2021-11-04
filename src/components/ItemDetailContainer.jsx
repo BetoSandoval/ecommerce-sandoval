@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import Main from "../assets/styles/elements/Main";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const fakeApi = "https://fakestoreapi.com/products/1";
-
+  const { id } = useParams();
+  console.log(id);
+  const fakeApi = `https://fakestoreapi.com/products/${id}`;
   const [item, setItem] = useState([]);
+
   useEffect(() => {
     setTimeout(() => {
       fetch(fakeApi)
@@ -15,11 +18,17 @@ const ItemDetailContainer = () => {
   }, [fakeApi]);
 
   if (item.length === 0) {
-    return <h1>Loading....</h1>;
+    return (
+      <Main>
+        <div className="main-container">
+          <h1 className="main-title">Loading...</h1>
+        </div>
+      </Main>
+    );
   } else {
     return (
       <Main>
-        <div className='main-container'>
+        <div className="main-container">
           <ItemDetail item={item} />
         </div>
       </Main>

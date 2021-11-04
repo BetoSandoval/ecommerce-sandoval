@@ -2,25 +2,26 @@ import React from "react";
 import styled from "styled-components";
 import { ItemCount } from "./ItemCount";
 
+
 const ItemDetail = (props) => {
   return (
-    <ItemDetailContainer>
-      <figure>
-        <img src={props.item.image} alt="Imagen del producto" />
-      </figure>
+      <ItemDetailContainer>
+        <figure>
+          <img src={props.item.image} alt="Imagen del producto" />
+        </figure>
 
-      <div className="item-info">
-        <ItemCount
-          name={props.item.title}
-          stock={props.item.rating.count}
-          initial={0}
-        />
+        <div className="item-info">
+          <ItemCount
+            name={props.item.title}
+            stock={props.item.rating.count}
+            initial={0}
+          />
 
-        <p className="desc">{props.item.description}</p>
+          <p className="desc">{props.item.description}</p>
 
-        <p className="price">Price: {props.item.price}</p>
-      </div>
-    </ItemDetailContainer>
+          <p className="price">Price: $ {props.item.price}</p>
+        </div>
+      </ItemDetailContainer>
   );
 };
 
@@ -44,7 +45,7 @@ const ItemDetailContainer = styled.div`
       text-align: left;
       margin-bottom: 3rem;
     }
-    .price{
+    .price {
       font-size: 3rem;
     }
   }
