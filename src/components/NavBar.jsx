@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -30,19 +31,19 @@ export const NavBar = () => {
       <Nav>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/" exact>Home</Link>
           </li>
           <li>
-            <a href="/about">Men's</a>
+            <Link to="/category/men's clothing">Men's</Link>
           </li>
           <li>
-            <a href="/contact">Women's</a>
+            <Link to="/category/women's clothing">Women's</Link>
           </li>
           <li>
-            <a href="/contact">Jewelery</a>
+            <Link to="/category/jewlery">Jewelery</Link>
           </li>
           <li>
-            <a href="/contact">Electronics</a>
+            <Link to="/category/electronics">Electronics</Link>
           </li>
         </ul>
       </Nav>
