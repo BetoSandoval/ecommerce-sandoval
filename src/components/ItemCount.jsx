@@ -37,7 +37,7 @@ export const ItemCount = ({ stock, initial, onClick}) => {
           <p className="count">{counter}</p>
           <button className="plus" onClick={ handleAdd }>+</button>
         </div>
-        <p className="add-shopping-car"><button onClick={() => onClick(counter) }>Agregar al carrito</button></p>
+        <p className="add-shopping-car"><button onClick={() => onClick(counter) }>Add to cart</button></p>
       </div>
     </CounterItemCard>
   );
