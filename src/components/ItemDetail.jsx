@@ -4,6 +4,11 @@ import { ItemCount } from "./ItemCount";
 
 
 const ItemDetail = (props) => {
+  const stateUpliftingfronCounter = ( datachild ) => {
+    console.log('Soy un metodo invocado en el hijo pero me ejecuto en el padre')
+    console.log(datachild)
+  }
+
   return (
       <ItemDetailContainer>
         <figure>
@@ -11,10 +16,11 @@ const ItemDetail = (props) => {
         </figure>
 
         <div className="item-info">
+          <h3 className="title-item">{props.item.title}</h3>
           <ItemCount
-            name={props.item.title}
             stock={props.item.rating.count}
             initial={0}
+            onClick={stateUpliftingfronCounter}
           />
 
           <p className="desc">{props.item.description}</p>
