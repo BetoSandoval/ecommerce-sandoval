@@ -29,10 +29,10 @@ const ItemDetail = (props) => {
             stock={props.item.rating.count}
             initial={0}
             onClick={stateUpliftingfronCounter}
-          />
+            />
           : <Link to={"/cart"}>
-          <button>go to cart</button>
-        </Link> 
+              <button>go to cart</button>
+            </Link> 
         }
 
       </div>
