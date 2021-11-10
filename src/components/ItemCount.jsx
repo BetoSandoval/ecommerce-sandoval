@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CounterItemCard from "../assets/styles/elements/CounterItemCard";
 
-export const ItemCount = ({ stock, initial, onClick}) => {
+export const ItemCount = ({ stock, initial, onAdd}) => {
 
   const [counter, setCounter] = useState( initial );
 
@@ -22,6 +22,10 @@ export const ItemCount = ({ stock, initial, onClick}) => {
     }
   }
 
+  const goToCart = () => {
+    onAdd(counter)
+  }
+
 
   return (
     <CounterItemCard>
@@ -32,7 +36,7 @@ export const ItemCount = ({ stock, initial, onClick}) => {
           <p className="count">{counter}</p>
           <button className="plus" onClick={ handleAdd }>+</button>
         </div>
-        <p className="add-shopping-car"><button onClick={() => onClick(counter) }>Add to cart</button></p>
+        <p className="add-shopping-car"><button onClick={goToCart}>Add to cart</button></p>
       </div>
     </CounterItemCard>
   );
