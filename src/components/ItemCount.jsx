@@ -22,11 +22,6 @@ export const ItemCount = ({ stock, initial, onClick}) => {
     }
   }
 
-  /* const onAdd = () => {
-    if(counter > 0){
-      console.log(`Se agragaron ${counter} los producots al carrito`);
-    }
-  } */
 
   return (
     <CounterItemCard>
