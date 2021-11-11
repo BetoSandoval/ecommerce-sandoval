@@ -8,6 +8,7 @@ const ItemDetail = (props) => {
 
   const stateUpliftingfronCounter = (datachild) => {
     setCount(datachild)
+    console.log(count, props)
   };
 
   console.log(`Se agregaron ${count} producots al carrito`);
@@ -28,7 +29,7 @@ const ItemDetail = (props) => {
           ? <ItemCount
             stock={props.item.rating.count}
             initial={0}
-            onClick={stateUpliftingfronCounter}
+            onAdd={stateUpliftingfronCounter}
             />
           : <Link to={"/cart"}>
               <button>go to cart</button>
