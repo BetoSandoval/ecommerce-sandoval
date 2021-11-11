@@ -1,6 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
+
+const CarWidget = () => {
+  return (
+    <ShoppingCar>
+      <span className="material-icons">shopping_cart</span>
+    </ShoppingCar>
+  );
+};
+
 const ShoppingCar = styled.div`
   border: 1px solid #e5e5e5;
   width: 10rem;
@@ -10,13 +19,5 @@ const ShoppingCar = styled.div`
     padding: 0.5rem 3.8rem;
   }
 `;
-
-const CarWidget = () => {
-  return (
-    <ShoppingCar>
-      <span className="material-icons">shopping_cart</span>
-    </ShoppingCar>
-  );
-};
 
 export default CarWidget;
