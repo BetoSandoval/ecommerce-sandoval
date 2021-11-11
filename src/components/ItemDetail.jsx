@@ -1,16 +1,18 @@
-import React,{useContext, useState} from "react";
+import React,{useContext} from "react";
 import styled from "styled-components";
 import { ItemCount } from "./ItemCount";
-import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
+import { useNavigate } from 'react-router-dom';
 
 
 const ItemDetail = (props) => {
   const { addToCart } = useContext(CartContext);
+  const navigate = useNavigate();;
 
   const onAdd = (amount) => {
-    console.log(amount, props)
-    addToCart(props, amount)
+    console.log(amount, props);
+    addToCart(props, amount);
+    navigate("/cart");
   };
 
   return (
@@ -29,10 +31,6 @@ const ItemDetail = (props) => {
           initial={0}
           onAdd={onAdd}
         />
-        <Link to={"/cart"}>
-          <button>go to cart</button>
-        </Link>
-
       </div>
     </ItemDetailContainer>
   );
