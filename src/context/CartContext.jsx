@@ -8,7 +8,8 @@ const CustomComponent = ( {children} ) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = ( product, amount ) => {
-
+    console.log('Estoy en contexto')
+    console.log(product, amount);
   }
 
   const contextValue = {
