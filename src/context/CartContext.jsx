@@ -1,20 +1,30 @@
 import { createContext, useState } from "react";
 
-export const CartContext = createContext([]);
+export const CartContext = createContext();
 
 const { Provider } = CartContext;
 
 const CustomComponent = ( {children} ) => {
   const [cart, setCart] = useState([]);
 
-  const addToCart = ( product, amount ) => {
-    console.log('Estoy en contexto')
+  const addToCartContext = ( product, amount ) => {
+    console.log('Estoy en contexto');
     console.log(product, amount);
+  }
+
+  const deleteToCartContext = () => {
+
+  }
+  
+  const emptyCartContext = () => {
+
   }
 
   const contextValue = {
     cart: cart,
-    addToCart: addToCart
+    addToCartContext: addToCartContext,
+    deleteToCartContext: deleteToCartContext,
+    emptyCartContext: emptyCartContext
   }
 
   return(
