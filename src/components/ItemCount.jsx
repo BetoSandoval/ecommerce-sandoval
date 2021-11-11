@@ -22,7 +22,7 @@ export const ItemCount = ({ stock, initial, onAdd}) => {
     }
   }
 
-  const goToCart = () => {
+  const addToCart = () => {
     onAdd(counter)
   }
 
@@ -36,7 +36,7 @@ export const ItemCount = ({ stock, initial, onAdd}) => {
           <p className="count">{counter}</p>
           <button className="plus" onClick={ handleAdd }>+</button>
         </div>
-        <p className="add-shopping-car"><button onClick={goToCart}>Add to cart</button></p>
+        <p className="add-shopping-car"><button onClick={addToCart}>Add to cart</button></p>
       </div>
     </CounterItemCard>
   );

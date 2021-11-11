@@ -6,12 +6,10 @@ import { Link } from "react-router-dom";
 const ItemDetail = (props) => {
   const [count, setCount] = useState(0)
 
-  const stateUpliftingfronCounter = (datachild) => {
-    setCount(datachild)
+  const onAdd = (amount) => {
+    setCount(amount)
     console.log(count, props)
   };
-
-  console.log(`Se agregaron ${count} producots al carrito`);
 
   return (
     <ItemDetailContainer>
@@ -29,7 +27,7 @@ const ItemDetail = (props) => {
           ? <ItemCount
             stock={props.item.rating.count}
             initial={0}
-            onAdd={stateUpliftingfronCounter}
+            onAdd={onAdd}
             />
           : <Link to={"/cart"}>
               <button>go to cart</button>
