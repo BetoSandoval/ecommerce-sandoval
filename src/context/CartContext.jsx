@@ -1,11 +1,11 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const CartContext = createContext([]);
 
 const { Provider } = CartContext;
 
 const CustomComponent = ( {children} ) => {
-    const context_value = [];
+  const [cart, setCart] = useState([])
 
   return(
     <Provider value={context_value}>
