@@ -6,7 +6,7 @@ import { CartContext } from "../context/CartContext";
 
 const Header = () => {
   const { cart } = useContext(CartContext);
-  console.log(result);
+  console.log(cart)
 
   return (
     <Headder id="main-header" className="header-v5 hidden-sm hidden-xs">
