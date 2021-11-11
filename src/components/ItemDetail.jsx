@@ -6,12 +6,12 @@ import { useNavigate } from 'react-router-dom';
 
 
 const ItemDetail = (props) => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCartContext } = useContext(CartContext);
   const navigate = useNavigate();;
 
   const onAdd = (amount) => {
     console.log(amount, props);
-    addToCart(props, amount);
+    addToCartContext(props, amount);
     navigate("/cart");
   };
 
