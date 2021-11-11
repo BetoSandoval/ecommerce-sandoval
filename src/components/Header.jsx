@@ -5,7 +5,7 @@ import { NavBar } from "./NavBar";
 import { CartContext } from "../context/CartContext";
 
 const Header = () => {
-  const result = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   console.log(result);
 
   return (
