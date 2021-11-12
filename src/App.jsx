@@ -4,12 +4,12 @@ import Header from "./components/Header";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import Cart from "./components/Cart";
-import CustomComponent from "./context/CartContext";
+import CustomProvider from "./context/CartContext";
 
 const App = () => {
   return (
     <>
-      <CustomComponent>
+      <CustomProvider>
         <Header />
         <Routes>
           <Route exact path="/" element={<ItemListContainer greeting="Our products" />}/>
@@ -17,7 +17,7 @@ const App = () => {
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
-      </CustomComponent>
+      </CustomProvider>
     </>
   );
 };
