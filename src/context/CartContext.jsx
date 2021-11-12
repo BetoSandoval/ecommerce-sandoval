@@ -4,34 +4,39 @@ export const CartContext = createContext();
 
 const { Provider } = CartContext;
 
-const CustomComponent = ( {children} ) => {
+const CustomProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const addToCartContext = ( product, amount ) => {
-    console.log('Estoy en contexto');
-    console.log(product, amount);
-  }
+  const addToCartContext = (product, amount) => {
 
-  const deleteToCartContext = () => {
+    if(!isInCart(product.item.id)){
+      setCart([...cart, { amount, product }]);
+    }else{
+      setCart([ { amount: amount + 1 }]);
+    }
+  };
 
-  }
-  
+  const isInCart = (productId) => {
+    const repeated = cart.find( i => i.product.item.id === productId);
+    return repeated ? true : false;
+  };
+
+  const deleteToCartContext = (id) => {
+    setCart([...cart.filter(i => i.product.item.id === id)])
+  };
+
   const emptyCartContext = () => {
-
-  }
+    setCart([]);
+  };
 
   const contextValue = {
     cart: cart,
     addToCartContext: addToCartContext,
     deleteToCartContext: deleteToCartContext,
-    emptyCartContext: emptyCartContext
-  }
+    emptyCartContext: emptyCartContext,
+  };
 
-  return(
-    <Provider value={contextValue}>
-        {children}
-    </Provider>
-  );
+  return <Provider value={contextValue}>{children}</Provider>;
 };
 
-export default CustomComponent;
+export default CustomProvider;
