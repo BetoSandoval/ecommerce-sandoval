@@ -5,29 +5,28 @@ import { CartContext } from "../context/CartContext";
 import { useNavigate } from 'react-router-dom';
 
 
-const ItemDetail = (props) => {
+const ItemDetail = (product) => {
   const { addToCartContext } = useContext(CartContext);
   const navigate = useNavigate();;
 
   const onAdd = (amount) => {
-    console.log(amount, props);
-    addToCartContext(props, amount);
+    addToCartContext(product, amount);
     navigate("/cart");
   };
 
   return (
     <ItemDetailContainer>
       <figure>
-        <img src={props.item.image} alt="Imagen del producto" />
+        <img src={product.item.image} alt="Imagen del producto" />
       </figure>
 
       <div className="item-info">
-        <h3 className="title-item">{props.item.title}</h3>
-        <p className="price">Price: $ {props.item.price}</p>
-        <p className="desc">{props.item.description}</p>
+        <h3 className="title-item">{product.item.title}</h3>
+        <p className="price">Price: $ {product.item.price}</p>
+        <p className="desc">{product.item.description}</p>
  
         <ItemCount
-          stock={props.item.rating.count}
+          stock={product.item.rating.count}
           initial={0}
           onAdd={onAdd}
         />
