@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import {CartContext} from '../context/CartContext';
 import styled from "styled-components";
 
 
 const CarWidget = () => {
+
+  const {cart} = useContext(CartContext);
+
   return (
     <ShoppingCar>
       <span className="material-icons">shopping_cart</span>
+      {cart.length ? cart.length : null }
     </ShoppingCar>
   );
 };
