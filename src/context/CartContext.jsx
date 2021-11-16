@@ -8,12 +8,14 @@ const CustomProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCartContext = (product, amount) => {
-
+    const newProduct = {amount, product};
+    const arrayCopy = [...cart];
+    
     if(!isInCart(product.item.id)){
-      setCart([...cart, { amount, product }]);
-    }else{
-      setCart([ { amount: amount + 1 }]);
+      arrayCopy.push(newProduct);
+      setCart(arrayCopy);
     }
+
   };
 
   const isInCart = (productId) => {
