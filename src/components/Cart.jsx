@@ -6,6 +6,10 @@ const Cart = () => {
   const { cart, deleteToCartContext } = useContext(CartContext);
   console.log(cart.length);
  
+  const handleDeleteItem = (e) =>{
+    console.log(cart)
+    e.target = deleteToCartContext(cart.product);
+  }
 
   return (
     <div>
@@ -17,7 +21,7 @@ const Cart = () => {
               Total : $ {index.product.item.price * index.amount} (Cant :{" "}
               {index.amount})
             </p>
-            <button onClick={deleteToCartContext}>Delete</button>
+            <button onClick={handleDeleteItem}>Delete</button>
           </article>
         ))
       ) : (

@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React,{useContext, useState} from "react";
 import styled from "styled-components";
 import { ItemCount } from "./ItemCount";
 import { CartContext } from "../context/CartContext";
@@ -6,13 +6,19 @@ import { useNavigate } from 'react-router-dom';
 
 
 const ItemDetail = (product) => {
+
+  const navigate = useNavigate();
   const { addToCartContext } = useContext(CartContext);
-  const navigate = useNavigate();;
+  const [show, setShow] = useState(false)
 
   const onAdd = (amount) => {
     addToCartContext(product, amount);
-    navigate("/cart");
+    setShow(true)
   };
+  
+  const redireccionar = () => {
+    navigate("/cart");
+  }
 
   return (
     <ItemDetailContainer>
@@ -30,6 +36,7 @@ const ItemDetail = (product) => {
           initial={0}
           onAdd={onAdd}
         />
+        { show && <button onClick={redireccionar}>Go to cart</button>}
       </div>
     </ItemDetailContainer>
   );

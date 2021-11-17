@@ -1,45 +1,42 @@
 import React, { useState } from "react";
 import CounterItemCard from "../assets/styles/elements/CounterItemCard";
 
-export const ItemCount = ({ stock, initial, onAdd}) => {
+export const ItemCount = ({ stock, initial, onAdd }) => {
+  const [counter, setCounter] = useState(initial);
 
-  const [counter, setCounter] = useState( initial );
-
-  const [stockCount, setStokCount] = useState( stock );
-  
   const handleAdd = () => {
-    if( counter < stock ){
-      setCounter( counter + 1 );
-      setStokCount( stockCount - 1 );
-
+    if (counter < stock) {
+      setCounter(counter + 1);
     }
-  }
+  };
 
   const handleRest = () => {
-    if( counter >= 1){
-      setCounter( counter - 1 );
-      setStokCount( stockCount + 1 );
+    if (counter >= 1) {
+      setCounter(counter - 1);
     }
-  }
+  };
 
   const addToCart = () => {
     onAdd(counter);
-  }
-
+  };
 
   return (
     <CounterItemCard>
       <div className="content-item">
-        <p>Stock: {stockCount}</p>
+        <p>Stock: {stock}</p>
         <div className="counter">
-          <button className="minus" onClick={ handleRest }>-</button>
+          <button className="minus" onClick={handleRest}>
+            -
+          </button>
           <p className="count">{counter}</p>
-          <button className="plus" onClick={ handleAdd }>+</button>
+          <button className="plus" onClick={handleAdd}>
+            +
+          </button>
         </div>
-        <p className="add-shopping-car"><button onClick={addToCart}>Add to cart</button></p>
+        <p className="add-shopping-car">
+          <button onClick={addToCart}>confirm purchase</button>
+        </p>
       </div>
     </CounterItemCard>
   );
 };
-
-
