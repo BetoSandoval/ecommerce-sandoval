@@ -5,10 +5,7 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const { cart, deleteToCartContext } = useContext(CartContext);
   console.log(cart.length);
-  const deleteItem = (e) => {
-      e.targe
-
-  }
+ 
 
   return (
     <div>
@@ -20,7 +17,7 @@ const Cart = () => {
               Total : $ {index.product.item.price * index.amount} (Cant :{" "}
               {index.amount})
             </p>
-            <button onClick={() => deleteToCartContext(index.product.item.id)}>Delete</button>
+            <button onClick={deleteToCartContext}>Delete</button>
           </article>
         ))
       ) : (
