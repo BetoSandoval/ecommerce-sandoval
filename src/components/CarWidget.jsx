@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
-import {CartContext} from '../context/CartContext';
+import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-
 const CarWidget = () => {
-
-  const {cart} = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
   return (
-    <ShoppingCar>
-      <span className="material-icons">shopping_cart</span>
-      {cart.length ? cart.length : null }
-    </ShoppingCar>
+    <Link to="/cart">
+      <ShoppingCar>
+        <span className="material-icons">shopping_cart</span>
+        {cart.length ? cart.length : null}
+      </ShoppingCar>
+    </Link>
   );
 };
 
