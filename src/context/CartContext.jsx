@@ -14,6 +14,8 @@ const CustomProvider = ({ children }) => {
     if(!isInCart(product.item.id)){
       arrayCopy.push(newProduct);
       setCart(arrayCopy);
+    }else{
+      setCart([...cart,{amount : amount + 1 }])
     }
   };
 
