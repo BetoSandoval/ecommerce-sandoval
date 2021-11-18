@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, deleteToCartContext } = useContext(CartContext);
-  console.log(cart.length);
+  console.log(cart);
  
-  const handleDeleteItem = (e) =>{
-    console.log(cart)
-    e.target = deleteToCartContext(cart.product);
+  const handleDeleteItem = () =>{
+     deleteToCartContext(cart.product.item.id);
   }
 
   return (

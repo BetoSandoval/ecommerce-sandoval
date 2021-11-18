@@ -15,7 +15,6 @@ const CustomProvider = ({ children }) => {
       arrayCopy.push(newProduct);
       setCart(arrayCopy);
     }
-
   };
 
   const isInCart = (productId) => {
