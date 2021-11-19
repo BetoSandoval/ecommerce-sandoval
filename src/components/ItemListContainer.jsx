@@ -2,13 +2,28 @@ import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import Main from "../assets/styles/elements/Main";
 import { useParams } from "react-router-dom";
+import { firestore } from "../firebase/firebase";
 
 const ItemListContainer = (props) => {
   const { category } = useParams();
 
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
+  const db = firestore;
+  const collection = db.collection("productos");
+  const promesa = collection.get();
+
+
+  promesa
+        .then((documento) => {
+          const data = documento.data();
+          console.log(data);
+        })
+        .catch(() => {
+          console.log("Hubo un error")
+        })
+
+/*   useEffect(() => {
     if (category) {
       fetch(`https://fakestoreapi.com/products/category/${category}`)
         .then((res) => res.json())
@@ -18,7 +33,7 @@ const ItemListContainer = (props) => {
         .then((resp) => resp.json())
         .then((json) => setItems(json));
     }
-  }, [category]);
+  }, [category]); */
 
   if (items.length === 0) {
     return (
