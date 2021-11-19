@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const CarWidget = () => {
-  const { cart } = useContext(CartContext);
+  const { cart } = useContext(CartContext); // Recordar borrar porque me bajan puntos
 
   return (
     <Link to="/cart">
