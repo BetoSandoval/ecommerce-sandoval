@@ -14,8 +14,6 @@ const CustomProvider = ({ children }) => {
     if(!isInCart(product.item.id)){
       arrayCopy.push(newProduct);
       setCart(arrayCopy);
-    }else{
-      setCart([...cart,{amount : amount + 1 }])
     }
   };
 
@@ -25,7 +23,7 @@ const CustomProvider = ({ children }) => {
   };
 
   const deleteToCartContext = (id) => {
-    setCart([...cart.filter(i => i.product.item.id === id)])
+    setCart([...cart.filter(i => i.product.item.id !== id)]);
   };
 
   const emptyCartContext = () => {
