@@ -17,7 +17,7 @@ const Cart = () => {
               Total : $ {index.product.price * index.amount} (Cant :{" "}
               {index.amount})
             </p>
-            <button onClick={() => deleteToCartContext(index.product.item.id)}>Delete</button>
+            <button onClick={() => deleteToCartContext(index.product.id)}>Delete</button>
           </article>
         ))
       ) : (
