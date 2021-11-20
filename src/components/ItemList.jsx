@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 
 
 // Agrupa y mapea items
-const ItemList = (props) => {
+const ItemList = (products) => {
   return (
     <ItemsListContainer>
-      {props.dataItems.map((item) => (
+      {products.dataItems.map((item) => (
         <Link to={`/item/${item.id}`} key={item.id}>
           <Item
             name={item.title}
             price={item.price}
             description={item.description}
-            stock={item.rating.count}
+            stock={item.stock}
             image={item.image}
             rating={item.rating}
             category={item.category}
