@@ -6,8 +6,7 @@ const Cart = () => {
   const { cart, deleteToCartContext } = useContext(CartContext);
   console.log(cart);
 
-  const handleDelete = (e,id) =>{
-    e.preventDefault();
+  const handleDelete = (id) =>{
     deleteToCartContext(id);
   }
  
@@ -22,7 +21,7 @@ const Cart = () => {
               Total : $ {index.product.item.price * index.amount} (Cant :{" "}
               {index.amount})
             </p>
-            <button onClick={(e) => handleDelete(e, index.product.item.id)}>Delete</button>
+            <button onClick={() => handleDelete( index.product.item.id)}>Delete</button>
           </article>
         ))
       ) : (
