@@ -11,10 +11,10 @@ const Cart = () => {
     <div>
       {cart.length ? (
         cart.map((index) => (
-          <article key={index.product.item.id}>
-            <h3>{index.product.item.title}</h3>
+          <article key={index.product.id}>
+            <h3>{index.product.title}</h3>
             <p>
-              Total : $ {index.product.item.price * index.amount} (Cant :{" "}
+              Total : $ {index.product.price * index.amount} (Cant :{" "}
               {index.amount})
             </p>
             <button onClick={() => deleteToCartContext(index.product.item.id)}>Delete</button>

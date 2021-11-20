@@ -8,36 +8,37 @@ const ItemListContainer = (props) => {
   const { category } = useParams();
 
   const [products, setProducts] = useState([]);
-  //1) Llamar a la db
-  //2) Coleccion
-  //3) Hacer consulta
-  //4) Obetener resultados y verificar que todo este en orden
-  //5)Seteo el esatdo
-  const db = firestore;
-  const collection = db.collection("productos");
-  const promesa = collection.get();
 
-  promesa
-    .then( (querySnapshot) => {
-      setProducts(querySnapshot.docs.map( doc => ({...doc.data(),id:doc.id}) ));
-      console.log(products);
-      }
-    )
-    .catch(() => {
-      console.log("Hubo un error");
-    });
+  useEffect(() => {
+    const db = firestore;
+    const collection = db.collection("productos");
+    let promesa;
 
-  /*   useEffect(() => {
-    if (category) {
-      fetch(`https://fakestoreapi.com/products/category/${category}`)
-        .then((res) => res.json())
-        .then((json) => setItems(json));
-    } else {
-      fetch("https://fakestoreapi.com/products")
-        .then((resp) => resp.json())
-        .then((json) => setItems(json));
+    if(category){
+      const query = collection.where( "category", "==", category );
+      promesa = query.get();
+      
+      promesa
+             .then( (querySnapshot) => {
+              setProducts(
+                querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+              );
+             } )
+    }else{
+      promesa = collection.get();
+      promesa
+        .then((querySnapshot) => {
+          setProducts(
+            querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+          );
+        })
+        .catch(() => {
+          console.log("Hubo un error");
+        });
     }
-  }, [category]); */
+
+  }, [category]);
+
 
   if (products.length === 0) {
     return (
@@ -52,7 +53,6 @@ const ItemListContainer = (props) => {
       <Main>
         <div className="main-container">
           <h1 className="main-title">{props.greeting}</h1>
-          {/* Crear dos componentes más itemList e item, Item list itera a item el numero de veces */}
           <ItemList dataItems={products} />
         </div>
       </Main>

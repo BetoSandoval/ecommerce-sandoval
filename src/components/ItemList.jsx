@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 
-// Agrupa y mapea items
+
 const ItemList = (products) => {
   return (
     <ItemsListContainer>
