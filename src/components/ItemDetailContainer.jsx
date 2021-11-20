@@ -16,9 +16,7 @@ const ItemDetailContainer = () => {
 
     promesa
            .then( (querySnapshot) => {
-             console.log('consulta exitosa')
              const data = querySnapshot.data();
-             console.log(data)
              setItem(data)
            });
   }, [id]);
