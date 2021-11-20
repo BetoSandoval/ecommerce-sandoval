@@ -32,7 +32,7 @@ const ItemDetail = (product) => {
         <p className="desc">{product.item.description}</p>
  
         <ItemCount
-          stock={product.item.rating.count}
+          stock={product.item.stock}
           initial={0}
           onAdd={onAdd}
         />

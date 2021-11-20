@@ -2,19 +2,26 @@ import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import Main from "../assets/styles/elements/Main";
 import { useParams } from "react-router-dom";
+import { firestore } from "../firebase/firebase";
 
 const ItemDetailContainer = () => {
-  const { id } = useParams();
-  const fakeApi = `https://fakestoreapi.com/products/${id}`;
   const [item, setItem] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      fetch(fakeApi)
-        .then((res) => res.json())
-        .then((json) => setItem(json));
-    }, 2000);
-  }, [fakeApi]);
+    const db = firestore;
+    const collection = db.collection("productos");
+    const query = collection.doc(id);
+    const promesa = query.get()
+
+    promesa
+           .then( (querySnapshot) => {
+             console.log('consulta exitosa')
+             const data = querySnapshot.data();
+             console.log(data)
+             setItem(data)
+           });
+  }, [id]);
 
   if (item.length === 0) {
     return (
