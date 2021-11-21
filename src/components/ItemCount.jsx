@@ -11,7 +11,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   const handleRest = () => {
-    if (counter >= 1) {
+    if (counter > 1) {
       setCounter(counter - 1);
     }
   };

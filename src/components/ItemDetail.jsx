@@ -33,7 +33,7 @@ const ItemDetail = (product) => {
  
         <ItemCount
           stock={product.item.stock}
-          initial={0}
+          initial={1}
           onAdd={onAdd}
         />
         { show && <button onClick={redireccionar}>Go to cart</button>}
