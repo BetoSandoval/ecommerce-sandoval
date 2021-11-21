@@ -20,6 +20,10 @@ const ItemDetail = (product) => {
     navigate("/cart");
   }
 
+  const redireccionarHome = () => {
+    navigate("/");
+  }
+
   return (
     <ItemDetailContainer>
       <figure>
@@ -37,6 +41,7 @@ const ItemDetail = (product) => {
           onAdd={onAdd}
         />
         { show && <button onClick={redireccionar}>Go to cart</button>}
+        { show && <button onClick={redireccionarHome}>Keep buying</button>}
       </div>
     </ItemDetailContainer>
   );
