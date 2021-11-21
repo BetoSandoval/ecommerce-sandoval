@@ -15,7 +15,7 @@ const CustomProvider = ({ children }) => {
       arrayCopy.push(newProduct);
       setCart(arrayCopy);
     }else{
-      amountSum(product.item.id, newProduct)
+      amountSum(product.item.id);
     }
   };
 
