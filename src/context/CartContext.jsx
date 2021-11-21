@@ -14,6 +14,8 @@ const CustomProvider = ({ children }) => {
     if(!isInCart(product.item.id)){
       arrayCopy.push(newProduct);
       setCart(arrayCopy);
+    }else{
+      amountSum(product.item.id, newProduct)
     }
   };
 
@@ -21,6 +23,11 @@ const CustomProvider = ({ children }) => {
     const repeated = cart.find( i => i.product.item.id === productId);
     return repeated ? true : false;
   };
+
+  const amountSum = (productId) => {
+    const index = cart.find( i => i.product.item.id === productId);
+    return index.amount += 1;
+  }
 
   const deleteToCartContext = (id) => {
     setCart([...cart.filter(i => i.product.item.id !== id)]);

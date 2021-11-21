@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart, deleteToCartContext } = useContext(CartContext);
-  console.log(cart);
 
   const handleDelete = (e,id) =>{
     e.preventDefault();
