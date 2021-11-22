@@ -15,7 +15,7 @@ const CustomProvider = ({ children }) => {
       arrayCopy.push(newProduct);
       setCart(arrayCopy);
     }else{
-      amountSum(product.item.id);
+      amountSum(product.item.id, amount);
     }
   };
 
@@ -24,9 +24,9 @@ const CustomProvider = ({ children }) => {
     return repeated ? true : false;
   };
 
-  const amountSum = (productId) => {
+  const amountSum = (productId, amount) => {
     const index = cart.find( i => i.product.item.id === productId);
-    return index.amount += 1;
+    return index.amount += amount;
   }
 
   const deleteToCartContext = (id) => {
