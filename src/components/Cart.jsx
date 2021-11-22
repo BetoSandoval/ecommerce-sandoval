@@ -9,7 +9,6 @@ const Cart = () => {
   const handleDelete = (id) => {
     deleteToCartContext(id);
   };
-  console.log(cart);
 
   return (
     <div>

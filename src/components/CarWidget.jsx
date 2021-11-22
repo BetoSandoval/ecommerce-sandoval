@@ -20,6 +20,7 @@ const ShoppingCar = styled.div`
   border: 1px solid #e5e5e5;
   width: 10rem;
   margin-top: 1rem;
+  text-align: center;
   .material-icons {
     color: #80b435;
     padding: 0.5rem 3.8rem;
@@ -27,12 +28,14 @@ const ShoppingCar = styled.div`
 `;
 
 const Number = styled.p`
-  width: 10rem;
-  margin-top: 2rem;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
   text-align: center;
   background-color: red;
   color: white;
-  border-radius: 5rem;
+  border: 0.5rem;
+  border-radius: 50%;
 `;
 
 export default CarWidget;
