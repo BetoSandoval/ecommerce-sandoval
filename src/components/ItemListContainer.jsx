@@ -14,31 +14,24 @@ const ItemListContainer = (props) => {
     const collection = db.collection("productos");
     let promesa;
 
-    if(category){
-      const query = collection.where( "category", "==", category );
+    if (category) {
+      const query = collection.where("category", "==", category);
       promesa = query.get();
-      
-      promesa
-             .then( (querySnapshot) => {
-              setProducts(
-                querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-              );
-             } )
-    }else{
+
+      promesa.then((querySnapshot) => {
+        setProducts(querySnapshot.docs.map((doc) => ({ ...doc.data() })));
+      });
+    } else {
       promesa = collection.get();
       promesa
         .then((querySnapshot) => {
-          setProducts(
-            querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-          );
+          setProducts(querySnapshot.docs.map((doc) => ({ ...doc.data() })));
         })
         .catch(() => {
           console.log("Hubo un error");
         });
     }
-
   }, [category]);
-
 
   if (products.length === 0) {
     return (
