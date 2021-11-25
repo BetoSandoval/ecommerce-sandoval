@@ -1,7 +1,7 @@
 import React from "react";
 import ItemCard from "../assets/styles/elements/ItemCard";
 
-const Item = ({ name, price, description, stock, image, rating, category }) => {
+const Item = ({ name, price, stock, image, category }) => {
   return (
     <ItemCard>
       <h3 className="title-item">{name}</h3>
