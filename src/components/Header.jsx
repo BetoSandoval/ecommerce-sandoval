@@ -7,7 +7,7 @@ import { NavBar } from "./NavBar";
 const Header = () => {
 
   return (
-    <Headder id="main-header" className="header-v5 hidden-sm hidden-xs">
+    <Headder>
       <div className="container">
         <div className="inner">
           <div className="logo">E-commerce</div>
