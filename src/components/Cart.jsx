@@ -35,8 +35,7 @@ const Cart = () => {
     const order = {
       buyer: user,
       items: cart,
-      total: 1000,
-      /* date: firestore.Timestamp.now() */
+      total: 1000
     };
     const db = firestore;
     const collection = db.collection("orders");
