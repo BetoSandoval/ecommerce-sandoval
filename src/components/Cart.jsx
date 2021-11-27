@@ -5,13 +5,24 @@ import styled from "styled-components";
 import { firestore } from "../firebase/firebase";
 
 const Cart = () => {
-  const { cart, deleteToCartContext, emptyCartContext } =
-    useContext(CartContext);
+  const {cart, deleteToCartContext, emptyCartContext} = useContext(CartContext);
   const [id, setId] = useState();
+  let sumAllProducPrice = 0;
 
   const handleDelete = (id) => {
     deleteToCartContext(id);
   };
+
+  const totalProductPrice = (price, amount) => {
+    let totalProduct = price * amount;
+    sumAllProducts(totalProduct);
+    return totalProduct;
+  }
+
+  const sumAllProducts = (totalProduct) => {
+    sumAllProducPrice += totalProduct;
+    return sumAllProducPrice;
+  }
 
   const purchaseProduct = () => {
     const user = {
@@ -25,9 +36,9 @@ const Cart = () => {
       buyer: user,
       items: cart,
       total: 1000,
-      /* date: firestore.TimeStamp.now() */
+      date: firestore.Timestamp.now()
     };
-
+    console.log(order);
     const db = firestore;
     const collection = db.collection("orders");
     const query = collection.add(order);
@@ -50,37 +61,43 @@ const Cart = () => {
     );
   } else
     return (
-      <div>
-        {cart.length ? (
-          cart.map((index) => (
-            <div key={index.product.item.id}>
-              <Product>
-                <img src={index.product.item.image} alt="imagen del producto" />
-                <div className="info-container">
-                  <h3>{index.product.item.title}</h3>
-                  <p>
-                    Total : $ {index.product.item.price * index.amount} (Cant :{" "}
-                    {index.amount})
-                  </p>
-                  <button onClick={() => handleDelete(index.product.item.id)}>
-                    Delete
-                  </button>
-                </div>
-              </Product>
-            </div>
-          ))
-        ) : (
-          <Main>
-            <h3 className="title"> The cart is empty </h3>
-            <Link to="/">
-              <button>Take a look to our products</button>
-            </Link>
-          </Main>
-        )}
-        {cart.length ? (
-          <button onClick={purchaseProduct}>Purchase product</button>
-        ) : null}
-      </div>
+      <>
+        <ProductContainer>
+          {cart.length ? (
+            cart.map((index) => (
+              <div key={index.product.item.id}>
+                <Product>
+                  <img src={index.product.item.image} alt="imagen del producto" />
+                  <div className="info-container">
+                    <h3>{index.product.item.title}</h3>
+                    <p>
+                      Sub total : $ {totalProductPrice(index.product.item.price, index.amount)} (Cant :{" "}
+                      {index.amount})
+                    </p>
+                    <button onClick={() => handleDelete(index.product.item.id)}>
+                      Delete
+                    </button>
+                  </div>
+                </Product>
+              </div>
+            ))
+          ) : (
+            <Main>
+              <h3 className="title"> The cart is empty </h3>
+              <Link to="/">
+                <button>Take a look to our products</button>
+              </Link>
+            </Main>
+          )}
+        </ProductContainer>
+        
+          {cart.length ?
+          <PurchaseContainer>
+            <h2> Total: $ {sumAllProducPrice}</h2>
+            <button onClick={purchaseProduct}>Purchase product</button>
+          </PurchaseContainer>
+          : null}
+      </>
     );
 };
 
@@ -104,11 +121,23 @@ const Product = styled.article`
   }
 `;
 
-const Main = styled.article`
+const Main = styled.div`
   text-align: center;
   .title {
     font-size: 4rem;
   }
+`;
+
+const ProductContainer = styled.div`
+  display: inline-block;
+  max-width: 52%;
+`;
+
+const PurchaseContainer = styled.div`
+max-width: 40%;
+display: inline-block;
+margin-left: 11rem;
+position: absolute;
 `;
 
 export default Cart;

@@ -41,7 +41,7 @@ const CustomProvider = ({ children }) => {
     cart: cart,
     addToCartContext: addToCartContext,
     deleteToCartContext: deleteToCartContext,
-    emptyCartContext: emptyCartContext,
+    emptyCartContext: emptyCartContext
   };
 
   return <Provider value={contextValue}>{children}</Provider>;
