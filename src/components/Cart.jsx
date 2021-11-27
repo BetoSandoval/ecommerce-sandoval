@@ -38,7 +38,6 @@ const Cart = () => {
       total: 1000,
       /* date: firestore.Timestamp.now() */
     };
-    console.log(order);
     const db = firestore;
     const collection = db.collection("orders");
     const query = collection.add(order);
