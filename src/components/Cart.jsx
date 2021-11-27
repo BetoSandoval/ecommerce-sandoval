@@ -51,17 +51,17 @@ const Cart = () => {
 
   if (id) {
     return (
-      <>
-        <h3>Your order ID is: {id}</h3>
+      <Main>
+        <h3 className="title" >Your order ID is: {id}</h3>
         <Link to="/">
           <button>Keep buying and take a look to other products</button>
         </Link>
-      </>
+      </Main>
     );
   } else
     return (
       <>
-        <ProductContainer>
+        <div>
           {cart.length ? (
             cart.map((index) => (
               <div key={index.product.item.id}>
@@ -88,12 +88,12 @@ const Cart = () => {
               </Link>
             </Main>
           )}
-        </ProductContainer>
+        </div>
         
           {cart.length ?
           <PurchaseContainer>
-            <h2> Total: $ {sumAllProducPrice}</h2>
-            <button onClick={purchaseProduct}>Purchase product</button>
+            <h2 className="title"> Total: $ {sumAllProducPrice}</h2>
+            <button className="boton" onClick={purchaseProduct}>Purchase product</button>
           </PurchaseContainer>
           : null}
       </>
@@ -107,9 +107,8 @@ const Product = styled.article`
   align-items: center;
   border: 2px solid #2b2b2b;
   border-radius: 3px;
-  margin-left: 4rem;
   padding: 2rem;
-  margin-bottom: 1rem;
+  margin: 1rem auto;
   img {
     max-width: 13rem;
   }
@@ -127,16 +126,14 @@ const Main = styled.div`
   }
 `;
 
-const ProductContainer = styled.div`
-  display: inline-block;
-  max-width: 52%;
-`;
-
 const PurchaseContainer = styled.div`
-max-width: 40%;
-display: inline-block;
-margin-left: 11rem;
-position: absolute;
+  text-align: center;
+  .title{
+    font-size: 5rem;
+  }
+  .boton{
+    margin-bottom: 2rem;
+  }
 `;
 
 export default Cart;
