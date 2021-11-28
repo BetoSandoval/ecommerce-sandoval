@@ -7,6 +7,8 @@ Dando click en la primera imagen podras ver un video con el funcionamiento del p
 
 =================================================================================================================================================
 
-![category1](https://github.com/BetoSandoval/ecommerce-sandoval/blob/master/src/assets/websiteImg/mens.png "Men's category")  ![cartItems](https://github.com/BetoSandoval/ecommerce-sandoval/blob/master/src/assets/websiteImg/cart-items.png "Cart With Items")
+![category1](https://github.com/BetoSandoval/ecommerce-sandoval/blob/master/src/assets/websiteImg/mens.png "Men's category")
+
+![cartItems](https://github.com/BetoSandoval/ecommerce-sandoval/blob/master/src/assets/websiteImg/cart-items.png "Cart With Items")
 
 ![cartEmpty](https://github.com/BetoSandoval/ecommerce-sandoval/blob/master/src/assets/websiteImg/cart-empty.png "Cart Empty")
