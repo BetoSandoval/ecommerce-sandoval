@@ -2,9 +2,9 @@
 
 ## Descricpióndel proyecto
 
-En este repositorio podras encontrar mi proyecto final para el curso de React.js de CoderHouse el cual consistió en programar la UI de una E-commerce ficticia.
+En este repositorio podras encontrar mi proyecto final para el curso de React.js de CoderHouse, el cual consistió en programar la UI de una E-commerce ficticia.
 
-En esta primera imagen podemos ver un captura de pantalla del home de la aplicación con una lista de todos los items displonibles en la tienda.
+En esta primera imagen podemos ver un captura de pantalla del home de la aplicación, con una lista de todos los items displonibles en la tienda.
 Dando click en la primera imagen podras ver un video con el flujo de compra del proyecto.
 [![Dando click aquí podras encontrar un video con el funcionamiento del proyecto](https://github.com/BetoSandoval/ecommerce-sandoval/blob/master/src/assets/websiteImg/home.png)](https://youtu.be/d_kvBlsYlOU)
 
@@ -23,7 +23,7 @@ Para usar esta aplicación sigue los siguientes pasos.
 
 1. Clonar este repositorio de GitHub. [Aquí puedes ver como clonar un repositorio](https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-2. Asegurate estar dentro del directorio que elegiste para que contenga los archivos del proyecto.
+2. Asegurate estar dentro del directorio que elegiste almacenar los archivos del proyecto.
 
 3. Una vez clonado o desacargados los archivos del proyecto y dentro del directorio seleccionado, ejecuta el comando ```npm install```.
 
