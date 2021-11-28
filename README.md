@@ -17,3 +17,15 @@ En la tercera imagen se muestra la sección del cart con los items previamente s
 
 En la tercera imagen se muestra el carrito vacio con ningun item preseleccionado.
 ![cartEmpty](https://github.com/BetoSandoval/ecommerce-sandoval/blob/master/src/assets/websiteImg/cart-empty.png "Cart Empty")
+
+## Uso e instalación
+Para usar esta aplicación sigue los siguientes pasos.
+
+1. Clonar este repositorio de GitHub. [Aquí puedes ver como clonar un repositorio](https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+2. Asegurate estar dentro del directorio que elegiste para que contenga los archivos del proyecto.
+
+3. Una vez clonado o desacargados los archivos del proyecto y dentro del directorio seleccionado, ejecuta el comando ```npm install```.
+
+4. Ejecuta el comando ```npm start``` y a continuación la aplicación debe ejecutarse de manera correcta.
+
