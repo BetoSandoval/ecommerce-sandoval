@@ -1,4 +1,4 @@
-# Proyecto de E-commerce de React.js de CoderHouse
+# Proyecto E-commerce React.js de CoderHouse
 
 ## Descricpióndel proyecto
 
