@@ -29,7 +29,7 @@ const Cart = () => {
       name: "Gemma",
       email: "gemma@email.com",
       phone: "1245656",
-      total: "",
+      total: sumAllProducts(),
     };
 
     const order = {
